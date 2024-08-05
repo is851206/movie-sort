@@ -1,8 +1,9 @@
 <script setup>
-import {ref} from "vue"
-import{useUserStore} from "./src/store/useUserStore"
+import {ref,computed} from "vue"
+import{useUserStore} from "./store/useUserStore"
 
 const useStore=useUserStore()
+
 
 
 
@@ -21,8 +22,9 @@ const useStore=useUserStore()
     <button :class="{normal:true,active:useStore.index===4}" @click="useStore.handleClick(4, 'Cartoon')">Cartoon</button>
   </div>
   <div class="third-row">
+  <!--C:\Users\jack6\Desktop\project\vue-sort\vue-sort\public\${movie.name}-->
     <div class="box" v-for="movie in useStore.filteredMovies" :key=movie.index>
-      <img :src="`/${movie.name}`" >
+      <img :src="`assets/${movie.name}`" >
       <h1>{{movie.title}}</h1>
       <h2>{{movie.price}}</h2>
     </div>
